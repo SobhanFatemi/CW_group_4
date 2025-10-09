@@ -8,9 +8,12 @@ def number_info(n):
 
     elif number == 0:
         raise ValueError
+    if n == 1 :
+        print(1) 
     
     else:
-        return number_info(n-1)
+        print(n)
+        number_info(n-1)
 
     
 number_info(number)
