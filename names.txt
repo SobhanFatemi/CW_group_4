@@ -1,1 +1,4 @@
-['Amir', 'Arman']
+ahmad
+amir
+arman
+Total number of names: 3
