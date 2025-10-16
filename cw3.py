@@ -1,14 +1,17 @@
 from datetime import datetime
-currect_time = datetime.now().hour
-# print(currect_time)
+import functools
+currect_time = datetime.now()
 def timer_decorator(start, end):
     def decorator(func):
+        @functools.wraps(func)
         def wrapper(*args, **kwargs):
 
             try:
-                 start <= currect_time < end
-                 print("ok")
-                 return func(*args, **kwargs)
+                 if start <= currect_time < end:
+                    print("ok")
+                    return func(*args, **kwargs)
+                 else:
+                     raise ValueError
             except ValueError:
                     print("valueerror")
                     return None
