@@ -24,7 +24,7 @@ class Car:
     
 samand = Car(123456, "Soren", 1391, True)
 
-class RentalAgency(Car):
+class RentalAgency():
     def __init__(self, cars=[]):
         self.cars = cars
 
@@ -41,14 +41,15 @@ class RentalAgency(Car):
         if not found:
             print("Car not found!")
 
-    def rent_car(self, car):
-        return super().return_car(car)
+    def rent_car(self,car):
+        car.rent_car()
+
     
     def return_car(self, car):
-        return super().return_car(car)
+        car.return_car()
     
-    def display_info(self, car):
-        return super().display_info(car)
+    def display_info(self,car):
+        car.display_info()
         
 agency = RentalAgency()
 agency.add_car(samand)
