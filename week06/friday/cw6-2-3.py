@@ -29,8 +29,10 @@ class RentalAgency():
 
     def add_car(self, *args):
         for arg in args:
-            self.cars.append(arg)
-            print(f"{arg.model} was added!")
+            if arg in args:
+                print(f"{arg.model} already exists!")
+                self.cars.append(arg)
+                print(f"{arg.model} was added!")
 
     def find_car(self, id):
         found = False

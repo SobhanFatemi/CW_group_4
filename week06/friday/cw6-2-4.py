@@ -23,8 +23,11 @@ class Inventory:
 
     def add_product(self, *args):
         for arg in args:
-            self.products.append(arg)
-            print(f"{arg.name} was added!")
+            if arg in self.products:
+                print(f"{arg.name} was already added!")
+            else:
+                self.products.append(arg)
+                print(f"{arg.name} was added!")
 
     def update_product(self, product, price):
         if product.price != price:
